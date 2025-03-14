@@ -1,4 +1,4 @@
-# EV Fleet Analytics - Full-Stack Developer Assessment
+# EV Fleet Analytics - Lead Developer Assessment
 
 ## Overview
 
@@ -7,7 +7,7 @@ Design and implement a small full-stack application to help fleet managers monit
 ## Timeline & Submission
 
 - **Duration**: 3 days
-- **Expected effort**: 4-5 hours
+- **Expected effort**: 6-8 hours
 - **Submission method**: Private GitHub repository
 - **Share access in a private github repository with**:
   - https://github.com/antonin-beev
@@ -20,18 +20,27 @@ Design and implement a small full-stack application to help fleet managers monit
 
 #### Data Model
 
-The application will track vehicles with the following properties:
+- Vehicles
+  - ID (uuid)
+  - Brand (string)
+  - Model (string)
+  - Battery capacity (kWh)
+  - Current charge level (%)
+  - Status (enum: available, charging, in_use)
+  - Last updated (timestamp)
+  - Average energy consumption (kWh/100km)
+  - Type (BEV/ICE) - *BEV = Battery Electric Vehicle, ICE = Internal Combustion Engine*
+  - Emission_gco2_km - *Grams of CO2 per kilometer*
 
-- ID (uuid)
-- Brand (string)
-- Model (string)
-- Battery capacity (kWh)
-- Current charge level (%)
-- Status (enum: available, charging, in_use)
-- Last updated (timestamp)
-- Average energy consumption (kWh/100km)
-- Type (BEV/ICE) - *BEV = Battery Electric Vehicle, ICE = Internal Combustion Engine*
-- Emission_gco2_km - *Grams of CO2 per kilometer*
+- Drivers
+    - FirstName
+    - LastName
+    - Department(logistics/maintenance/sales)
+- Vehicle Usage
+    - vehicle
+    - driver
+    - date
+    - distance
 
 **Data Source**: Seed your database using the provided `data/cars.csv` file (available in the project repository).
 
@@ -43,7 +52,9 @@ The application will track vehicles with the following properties:
     - GET /vehicles/:id - Get vehicle details
     - PUT /vehicles/:id - Update vehicle
     - DELETE /vehicles/:id - Remove vehicle
-2. **Analytics**
+2. **Driver Management**
+3. **Vehicle Usage Data**
+4. **Analytics**
     - GET /analytics/fleet-efficiency
         - Average energy consumption rates across different models
         - Emissions comparison between BEV and ICE vehicles
@@ -52,6 +63,8 @@ The application will track vehicles with the following properties:
     - GET /analytics/fleet-operational
         - Current fleet availability rate (% of vehicles available)
         - Number of vehicles currently charging vs. in use
+        - Vehicle usage by driver
+        - Support date/employee/department filtering/grouping
 
 #### Technical Specifications
 
