@@ -7,7 +7,7 @@ Design and implement a small full-stack application to help fleet managers monit
 ## Timeline & Submission
 
 - **Duration**: 3 days
-- **Expected effort**: 6-8 hours
+- **Expected effort**: ~5 hours
 - **Submission method**: Private GitHub repository
 - **Share access in a private github repository with**:
   - https://github.com/antonin-beev
